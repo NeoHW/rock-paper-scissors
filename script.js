@@ -53,14 +53,6 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     while (playerScore < 5 && computerScore < 5){
         /* Prompt user for input */
-        do {
-            let x = prompt("Choose rock, paper or scissors");
-            playerChoice = x.toLowerCase();
-        }
-        /* while (!(playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors" )) */
-        /* Remember that !(a || b) == (!a && !b) */
-        while (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors"); 
-
 
         playRound(playerChoice, computerPlay());
         console.log(`Your score: ${playerScore}`);
