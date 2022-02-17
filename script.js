@@ -1,20 +1,7 @@
 /* assign score variables */ 
 let playerScore = 0;
 let computerScore = 0;
-
-function computerPlay() {
-    let randomNumber = Math.floor(Math.random() * 3);
-
-    if(randomNumber == 0) {
-        return "rock";
-    }
-    else if (randomNumber == 1) {
-        return "paper";
-    }
-    else {
-        return "scissors";
-    }
-}
+let roundwinner = '';
 
 function playRound(playerSelection, computerSelection) {
     /* For Draws */
@@ -50,20 +37,55 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    while (playerScore < 5 && computerScore < 5){
-        /* Prompt user for input */
+function computerChoice() {
+    let randomNumber = Math.floor(Math.random() * 3);
 
-        playRound(playerChoice, computerPlay());
-        console.log(`Your score: ${playerScore}`);
-        console.log(`Computer's score: ${computerScore}`);
+    if(randomNumber == 0) {
+        return "rock";
     }
-    if (playerScore == 5) {
-        console.log("you have bested the computer") 
+    else if (randomNumber == 1) {
+        return "paper";
     }
-    else if (computerScore == 5) {
-        console.log("It appears computers are better than humans after all") 
+    else {
+        return "scissors";
     }
 }
 
-game()
+
+
+function game(playerChoice) {
+    if (playerScore < 5 && computerScore < 5) {
+        playRound(playerChoice, computerChoice());
+        console.log(`Your score: ${playerScore}`);
+        console.log(`Computer's score: ${computerScore}`);
+    }
+
+    else if (playerScore == 5) {
+        console.log("you have bested the computer") 
+    }
+    else if (computerScore == 5) {
+        console.log("It appears computers are better than humans after all")
+    }
+
+}
+
+
+// UI 
+const rockBtn = document.querySelector('#rockButton');
+const paperBtn = document.querySelector('#paperButton');
+const scissorsBtn = document.querySelector('#scissorsButton');
+
+rockBtn.addEventListener('click', () => {
+    // Call the function start with 'rock' as argument 
+    game('rock');
+});
+
+paperBtn.addEventListener('click', () => {
+    // Call the function start with 'paper' as argument 
+    game('paper');
+});
+
+scissorsBtn.addEventListener('click', () => {
+    // Call the function start with 'scissors' as argument 
+    game('scissors');
+});

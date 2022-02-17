@@ -34,7 +34,6 @@ body {
 .info {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
 }
 
 .info-result {
@@ -61,15 +60,17 @@ body {
     font-size: 5em;
 }
 
-
 .rounded-square {
     height: 150px;
     width: 150px;
     border-radius:20px;
     margin: 0 4em;
+    cursor:pointer;
 }
 
-
+button:hover {
+    background-color: #D3D3D3;
+}
 
 .footer {
     margin-top: auto;
