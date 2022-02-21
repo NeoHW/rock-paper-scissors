@@ -5,17 +5,16 @@ Check out the game [here!](https://neohw.github.io/rock-paper-scissors/) :point_
 &nbsp;
 
 ## What is this project about?
-***
+
 This project is a simple rock paper scissors game where players would be able to play on an
 interactive webpage developed using HTML, CSS and Javascript.
 
 &nbsp;
 
 ## Creating the game
-***
+
 ### **Layout of the page**
 
-&nbsp;
 
 The layout of the page is created using HTML & CSS, This required knowledge of Flexbox properties such as:
 ```
@@ -39,7 +38,6 @@ align-items: center;
 
 ### **Javascript**
 
-&nbsp;
 
 For my first version of the game, I created it purely via Javascript. The game would be played via the alert method for users to input their choice, and the output would be done through the console.
 
@@ -58,7 +56,6 @@ From there on, I added a UI to it. This allowed the users to have a better UX as
 
 ### **Git branches**
 
-&nbsp;
 
 When creating the second version of the game, I also learnt about the concept of **branching**.
 
