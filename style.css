@@ -114,3 +114,7 @@ button:hover {
       color: #15253f;
       background-color: white;
   }
+
+  #restart:hover {
+    background-color: #D3D3D3;
+}
