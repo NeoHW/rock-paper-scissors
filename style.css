@@ -40,6 +40,12 @@ body {
     align-self: center;
 }
 
+.info-reason {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .scoreboard {
     display:flex;
     gap: 10em;
