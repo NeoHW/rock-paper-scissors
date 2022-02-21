@@ -1,9 +1,8 @@
-// buttons
+// UI
 const rockBtn = document.querySelector('#rockButton');
 const paperBtn = document.querySelector('#paperButton');
 const scissorsBtn = document.querySelector('#scissorsButton');
 
-// Divs
 const infoResult = document.querySelector('.info-result');
 const infoReason = document.querySelector('.info-reason');
 
@@ -12,6 +11,11 @@ const playerPoints = document.querySelector('#playerPoints');
 const computerSign = document.querySelector('#computerSign');
 const computerPoints = document.querySelector('#computerPoints');
 
+const roundedSquare = document.querySelectorAll('.rounded-square');
+
+const endBox = document.querySelector('#end-box');
+const endText = document.querySelector('#end-text');
+const playAgain = document.querySelector('#restart');
 
 //// Script ////
 
@@ -86,15 +90,27 @@ function game(playerChoice) {
         playRound(playerChoice, computerChoice());
         playerPoints.textContent = `Your score: ${playerScore}`;
         computerPoints.textContent = `Computer's score: ${computerScore}`;
-    }
 
-    else if (playerScore == 5) {
-        console.log("you have bested the computer") 
-    }
-    else if (computerScore == 5) {
-        console.log("It appears computers are better than humans after all")
-    }
+        if (playerScore == 5) {
+            endText.textContent = "You win!" ;
+            endBox.style.visibility = 'visible';
+            // loop through every button and disable them
+            for (var button in roundedSquare) {
+                roundedSquare[button].disabled = true;
+            }
+            // reload page when play again btn clicked
+            playAgain.onclick = () => window.location.reload();
+        }
 
+        if (computerScore == 5) {
+            endText.textContent = "You lost!" ;
+            endBox.style.visibility = 'visible';
+            for (var button in roundedSquare) {
+                roundedSquare[button].disabled = true;
+            }
+            playAgain.onclick = () => window.location.reload();
+        }
+    }
 }
 
 rockBtn.addEventListener('click', () => {
